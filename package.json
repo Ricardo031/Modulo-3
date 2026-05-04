@@ -1,0 +1,23 @@
+{
+  "name": "interactive-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricardo031/Modulo-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ricardo031/Modulo-3/issues"
+  },
+  "homepage": "https://github.com/Ricardo031/Modulo-3#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
