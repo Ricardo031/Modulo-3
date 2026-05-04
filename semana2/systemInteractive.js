@@ -36,6 +36,15 @@ for (const numero of miSet) {
     console.log("Valor:", numero);
 } //!no aparecere el 2 porque se elimino anteriormente
 
+//% task 3 Creación de un Map:
+//Crea un Map que relacione la categoría del producto (clave) con el nombre del producto (valor).
+const nuevoMap = productos.map(producto => [producto.id, producto.nombre]);
+//otra forma usando el New Map
+const nuevoMap2 = new Map(productos.map(producto => [producto.id, producto.nombre]));
+console.log("Contenido del Map:", nuevoMap);
+console.log("Contenido del Map2:", nuevoMap2);
+
+
 
 
 
