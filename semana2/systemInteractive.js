@@ -44,10 +44,25 @@ const nuevoMap2 = new Map(productos.map(producto => [producto.id, producto.nombr
 console.log("Contenido del Map:", nuevoMap);
 console.log("Contenido del Map2:", nuevoMap2);
 
-
-
-
-
-
-
-
+//% task 4 Iteración sobre las estructuras de datos:
+//*Usa for…in para listar propiedades y valores del objeto.
+for (const producto in productos) { //producto: es el indice del producto
+    console.log(producto);
+    console.log(productos[producto]); //productos[producto]: es el objeto del producto
+}
+//Usa for…of para recorrer el Set.
+for (const numero of miSet) {
+    console.log("Valor:", numero);
+}
+//Usa forEach() para recorrer el Map y mostrar claves y valores de forma descriptiva.
+productos.forEach((producto, id) => {
+    console.log(`ID: ${id}, Nombre: ${producto.nombre}`);
+})
+console.log("-----------------");
+nuevoMap.forEach((nombre, id) => {
+    console.log(`ID: ${id}, Nombre: ${nombre}`);
+})
+console.log("-----------------");
+nuevoMap2.forEach((nombre, id) => {
+    console.log(`ID: ${id}, Nombre: ${nombre}`);
+})
