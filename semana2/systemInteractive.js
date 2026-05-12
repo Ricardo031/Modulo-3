@@ -37,6 +37,7 @@ for (const numero of miSet) {
 } //!no aparecere el 2 porque se elimino anteriormente
 
 //% task 3 Creación de un Map:
+console.log("--- Operaciones con Map ---");
 //Crea un Map que relacione la categoría del producto (clave) con el nombre del producto (valor).
 // Map from array of objects
 const nuevoMap = productos.map(producto => [producto.id, producto.nombre]);
@@ -51,11 +52,11 @@ for (const producto in productos) { //producto: es el indice del producto
     console.log(producto);
     console.log(productos[producto]); //productos[producto]: es el objeto del producto
 }
-//Usa for…of para recorrer el Set.
+//*Usa for…of para recorrer el Set.
 for (const numero of miSet) {
     console.log("Valor:", numero);
 }
-//Usa forEach() para recorrer el Map y mostrar claves y valores de forma descriptiva.
+//*Usa forEach() para recorrer el Map y mostrar claves y valores de forma descriptiva.
 productos.forEach((producto, id) => {
     console.log(`ID: ${id}, Nombre: ${producto.nombre}`);
 })
@@ -72,11 +73,10 @@ console.log("----------Task5-------------");
 //% task 5 Validación y pruebas:
 //Implementa validaciones para asegurar que cada producto tenga id, nombre y precio válidos.
 for (const producto of productos) {
-        if (!producto.id || !producto.nombre || producto.precio <= 0) {
-            console.error(`Producto inválido: ${JSON.stringify(producto)}`);
-        }
+    if (!producto.id || !producto.nombre || producto.precio <= 0) {
+        console.error(`Producto inválido: ${JSON.stringify(producto)}`);
+    }
 }
-let nuevopro = new productos();
 
 //Lista completa de productos (objeto)
 console.log(productos);
