@@ -42,7 +42,7 @@ function mostrarNotas() {
     }
 
         listaNotas.style.display = 'flex'; // Mostrar la lista de notas si hay ideas guardadas. cuando hay mas de 0 ideas guardada.
-        valores.forEach(function (valor, indice) {
+        valores.forEach((valor, indice) => {
         let li = document.createElement('li');
         li.classList.add('idea-item');
         li.innerHTML = `<div class="idea-content">
@@ -52,7 +52,7 @@ function mostrarNotas() {
 
         let btnEliminar = li.querySelector('.btn-eliminar');
         btnEliminar.addEventListener('click', function () {
-            const ideasActualizadas = valores.filter(function (_, i) {
+            const ideasActualizadas = valores.filter((_, i) => {
                 return i !== indice;
             });
 
