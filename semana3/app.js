@@ -22,13 +22,15 @@ btn.addEventListener('click', function (event) {
     if (textoIdea === '') {
         alert('Por favor, escribe una idea.');
         return;
-    }else{
+    } else {
         const ideasGuardadas = obtenerIdeas();
         ideasGuardadas.push(textoIdea);
         guardarIdeas(ideasGuardadas);
         mostrarNotas();
         idea.value = '';
     }
+
+
 });
 
 function mostrarNotas() {
@@ -39,9 +41,8 @@ function mostrarNotas() {
         return;
     }
 
-        listaNotas.style.display = 'flex'; // Mostrar la lista de notas si hay ideas guardadas. cuando hay mas de 0 ideas guardada.
-        
-        valores.forEach(function (valor, indice) {
+    listaNotas.style.display = 'flex'; // Mostrar la lista de notas si hay ideas guardadas. cuando hay mas de 0 ideas guardada.
+    valores.forEach((valor, indice) => {
         let li = document.createElement('li');
         li.classList.add('idea-item');
         li.innerHTML = `<div class="idea-content">
@@ -51,11 +52,20 @@ function mostrarNotas() {
 
         let btnEliminar = li.querySelector('.btn-eliminar');
         btnEliminar.addEventListener('click', function () {
-            const ideasActualizadas = valores.filter(function (_, i) {
-                return i !== indice;
-            });
+            // 1. Usar removeChild para eliminar el elemento del DOM (Criterio de aceptación)
+            listaNotas.removeChild(li);
 
-            guardarIdeas(ideasActualizadas);
+            // 2. Filtrar las ideas para obtener el nuevo estado
+            const ideasActualizadas = valores.filter((_, i) => i !== indice);
+
+            // 3. Usar localStorage.removeItem() si ya no quedan ideas (Criterio de aceptación)
+            if (ideasActualizadas.length === 0) {
+                localStorage.removeItem('ideas');
+            } else {
+                guardarIdeas(ideasActualizadas);
+            }
+
+            // 4. Refrescar la vista para sincronizar los índices de los elementos restantes
             mostrarNotas();
         });
 
