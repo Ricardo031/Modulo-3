@@ -29,8 +29,6 @@ btn.addEventListener('click', function (event) {
         mostrarNotas();
         idea.value = '';
     }
-
-    
 });
 
 function mostrarNotas() {
@@ -42,6 +40,7 @@ function mostrarNotas() {
     }
 
         listaNotas.style.display = 'flex'; // Mostrar la lista de notas si hay ideas guardadas. cuando hay mas de 0 ideas guardada.
+        
         valores.forEach(function (valor, indice) {
         let li = document.createElement('li');
         li.classList.add('idea-item');
@@ -64,6 +63,6 @@ function mostrarNotas() {
     });
 }
 
-mostrarNotas() // Mostrar notas al cargar la página. esto es indispensable para que se muestren las ideas guardadas.
+mostrarNotas() // Mostrar notas al cargar la página. esto es indispensable para que se muestren las ideas guardadas al momento de iniciar la pag.
 
 
