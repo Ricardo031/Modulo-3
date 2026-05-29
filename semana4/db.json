@@ -1,0 +1,20 @@
+{
+    "tareas": [
+        {
+            "id": 1,
+            "texto": "Completar el proyecto"
+        },
+        {
+            "id": 2,
+            "texto": "Estudiar JavaScript"
+        },
+        {
+            "id": 3,
+            "texto": "Manejar el auto"
+        },
+        {
+            "id": 4,
+            "texto": "Practicar con React"
+        }
+    ]
+}
