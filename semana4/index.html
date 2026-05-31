@@ -13,22 +13,22 @@
         <div class="container-header">
             <div class="slogan">
                 <img class="img-slogan" src="img/book-bookmark.svg" alt="bookmark">
-                <p class="text-slogan">Captura tus pensamientos instataneamente</p>
+                <p class="text-slogan">Capture your thoughts instantly</p>
             </div>
-            <h1 class="title">Mis Tareas</h1>
-            <p>Escribe una tarea y presiona 'Agregar' para guardarla en tu lista.</p>
+            <h1 class="title">My Tasks</h1>
+            <p>Write a task and press 'Add' to save it to your list.</p>
 
-            <form class="form" action="">
-                <input type="text" class="input-tarea" id="tarea" placeholder="Tarea">
-                <button class="btn-agregar" id="btnAgregar" type="submit"> + Agregar</button>
-                <button class="btn-obtener" id="btnObtener">Obtener lista</button>
+            <form class="form" id="tareaForm">
+                <input type="text" class="input-tarea" id="tarea" placeholder="Task">
+                <button type="submit" class="btn-agregar" id="btnAgregar"> + Add</button>
+                <button type="button" class="btn-sync" id="btnSync">Sync List</button>
             </form>
         </div>
 
     </header>
 
     <main class="main">
-        <h3 class="title sub-title">Lista</h3>
+        <h3 class="title sub-title">List</h3>
         <ul class="tarea-list" id="listaTareas"></ul>
     </main>
     <script src="app.js"></script>

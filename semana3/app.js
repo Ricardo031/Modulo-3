@@ -1,51 +1,51 @@
-let idea = document.getElementById('idea');
+let tarea = document.getElementById('tarea');
 let btn = document.getElementById('btnAgregar');
-let listaNotas = document.getElementById('listaNotas');
+let listaTareas = document.getElementById('listaTareas');
 
-function obtenerIdeas() {
-    return JSON.parse(localStorage.getItem('ideas')) || [];
+function obtenerTareas() {
+    return JSON.parse(localStorage.getItem('tareas')) || [];
 }
 
-function guardarIdeas(ideas) {
-    localStorage.setItem('ideas', JSON.stringify(ideas));
+function guardarTareas(tareas) {
+    localStorage.setItem('tareas', JSON.stringify(tareas));
 }
 
-console.log(obtenerIdeas());
+console.log(obtenerTareas());
 
 
-//%todo task 3. Agregar notas al DOM:
+//todo task 3. Agregar notas al DOM:
 btn.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const textoIdea = idea.value.trim();
+    const textoTarea = tarea.value.trim();
 
-    if (textoIdea === '') {
-        alert('Por favor, escribe una idea.');
+    if (textoTarea === '') {
+        alert('Por favor, escribe una tarea.');
         return;
     } else {
-        const ideasGuardadas = obtenerIdeas();
-        ideasGuardadas.push(textoIdea);
-        guardarIdeas(ideasGuardadas);
-        mostrarNotas();
-        idea.value = '';
+        const tareasGuardadas = obtenerTareas();
+        tareasGuardadas.push(textoTarea);
+        guardarTareas(tareasGuardadas);
+        mostrarTareas();    
+        tarea.value = '';
     }
 
 
 });
 
-function mostrarNotas() {
-    let valores = obtenerIdeas();
-    listaNotas.innerHTML = '';
+function mostrarTareas() {
+    let valores = obtenerTareas();
+    listaTareas.innerHTML = '';
     if (valores.length === 0) {
-        listaNotas.style.display = 'none';
+        listaTareas.style.display = 'none';
         return;
     }
 
-    listaNotas.style.display = 'flex'; // Mostrar la lista de notas si hay ideas guardadas. cuando hay mas de 0 ideas guardada.
+    listaTareas.style.display = 'flex'; // Mostrar la lista de tareas si hay tareas guardadas. cuando hay mas de 0 tareas guardada.
     valores.forEach((valor, indice) => {
         let li = document.createElement('li');
-        li.classList.add('idea-item');
-        li.innerHTML = `<div class="idea-content">
+        li.classList.add('tarea-item');
+        li.innerHTML = `<div class="tarea-content"> 
         <p>${valor}</p>
         <button class="btn-eliminar">Eliminar</button>
         </div>`;
@@ -53,26 +53,26 @@ function mostrarNotas() {
         let btnEliminar = li.querySelector('.btn-eliminar');
         btnEliminar.addEventListener('click', function () {
             // 1. Usar removeChild para eliminar el elemento del DOM (Criterio de aceptación)
-            listaNotas.removeChild(li);
+            listaTareas.removeChild(li);
 
             // 2. Filtrar las ideas para obtener el nuevo estado
             const ideasActualizadas = valores.filter((_, i) => i !== indice);
 
             // 3. Usar localStorage.removeItem() si ya no quedan ideas (Criterio de aceptación)
-            if (ideasActualizadas.length === 0) {
-                localStorage.removeItem('ideas');
+            if (tareasActualizadas.length === 0) {
+                localStorage.removeItem('tareas');
             } else {
-                guardarIdeas(ideasActualizadas);
+                guardarTareas(ideasActualizadas);
             }
 
             // 4. Refrescar la vista para sincronizar los índices de los elementos restantes
-            mostrarNotas();
+            mostrarTareas();
         });
 
-        listaNotas.appendChild(li);
+        listaTareas.appendChild(li);
     });
 }
 
-mostrarNotas() // Mostrar notas al cargar la página. esto es indispensable para que se muestren las ideas guardadas al momento de iniciar la pag.
+mostrarTareas() // Mostrar notas al cargar la página. esto es indispensable para que se muestren las ideas guardadas al momento de iniciar la pag.
 
 

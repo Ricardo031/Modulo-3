@@ -1,20 +1,13 @@
 {
-    "tareas": [
-        {
-            "id": 1,
-            "texto": "Completar el proyecto"
-        },
-        {
-            "id": 2,
-            "texto": "Estudiar JavaScript"
-        },
-        {
-            "id": 3,
-            "texto": "Manejar el auto"
-        },
-        {
-            "id": 4,
-            "texto": "Practicar con React"
-        }
-    ]
+  "tareas": [
+    {
+      "texto": "eat dinner",
+      "id": "-CaZgzYEzdM"
+    },
+    {
+      "texto": "to drive the car",
+      "id": "-CaZgzYEzdr"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
